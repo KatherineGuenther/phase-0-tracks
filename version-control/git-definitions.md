@@ -4,7 +4,7 @@
 
 * What is version control?  Why is it useful?
 
-Version control allows us to view the history of revisions to one or more files and merge changes made by multiple people.  It also allow us to roll back in time to any previous version.  Rolling back to a previous version is useful if a revision has unintended consequences.  Managing this manually on a large project would be a nightmare!
+Version control allows us to view the history of revisions to one or more files and merge changes made by multiple people.  It also allow us to roll back in time to any previous version.  Rolling back to a previous version is useful if a revision has unintended consequences.  Managing this manually on a large project would be a nightmare!!
 
 * What is a branch and why would you use one?
 
