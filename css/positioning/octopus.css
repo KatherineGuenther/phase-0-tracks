@@ -1,0 +1,19 @@
+#octopus {
+	display: block;
+	margin: 150px auto;
+	z-index: -1;
+}
+
+#hat {
+	display: block;
+	margin: 0 auto;
+	position: relative;
+	top: -500px;	
+}
+
+#glasses {
+	display: block;
+	margin: 0 auto;
+	position: relative;
+	top: -500px;
+}
