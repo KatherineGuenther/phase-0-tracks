@@ -1,0 +1,22 @@
+1) Robot elevator
+Supply 2 arguments: floor, direction
+
+If direction is up and top button is not lit:
+    Push top button
+Otherwise if direction is down and bottom button is not lit:
+    Push bottom button
+Otherwise:
+    Wait patiently
+
+When door opens, enter elevator, then turn around.
+When door closes, push button for floor.
+When button for floor is unlit and door is open, exit elevator
+
+2) Bench press
+Set number of reps to 0.
+
+Until number of reps is 10
+    Lift weight.
+    Return to resting position.
+    Rest 2 seconds.
+    Add 1 to the reps count.
