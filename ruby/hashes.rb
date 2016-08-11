@@ -2,7 +2,7 @@
 client = {}
 
 #Print a welcome message
-puts "Welcome to Tacme Designs"
+puts "Welcome to Acme Designs"
 
 #Prompt user for name
 puts "Please enter your name:"
@@ -29,18 +29,42 @@ puts "Please enter your preferred theme:"
 client[:theme] = gets.chomp
 
 #Prompt user for :likes_plaid
-#puts "Do you like plaid (y/n)"
+puts "Do you like plaid (y/n)?"
 
-#Covert input to boolean and assign to :likes_plaid
-#answer = gets.chomp
-#client.[likes_plaid] = yes_or_no(answer)
+#Covert input to boolean and assign to :likes_plaid.  Anything but "y" is false.
+answer = gets.chomp
+client[:likes_plaid] = answer == "y"
 
 #Prompt user for payment method
+puts "Will you be paying cash (y/n)?"
 
-#Covert to boolean and assign to :cash
+#Covert to boolean and assign to :cash.  Anything but "y" is false.
+answer = gets.chomp
+client[:cash] = answer == "y"
 
 #Print hash to screen
+puts client
 
 #Ask user if any one key needs to be updated
-#If input isn't "done",  prompt for new value and assign to appropriate key.  Print updated version of the hash.
+puts "Which question would you like to answer again?"
+answer = gets.chomp
+
+#If input isn't "none",  prompt for new value and assign to appropriate key.  Print updated version of the hash.
+if answer != "none"
+	puts "Please enter a new response for #{answer}:"
+	if answer == "name" || answer == "theme"
+		client[answer.to_sym] = gets.chomp
+	elsif answer == "age" || "answer" == "children"
+		client[answer.to_sym] = gets.chomp.to_i
+	else
+		client[answer.to_sym] = gets.chomp == "y"
+	end
+
+	puts client
+end
+
+
+
+
+
 
