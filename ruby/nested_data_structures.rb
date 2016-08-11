@@ -12,4 +12,15 @@ my_office = {
 	]
 }
 
-p my_office
+puts my_office
+
+#Access "Learn to Program"
+puts my_office[:book_shelf][:non_fiction][1]
+
+#Remove "box of tax returns"
+my_office[:closet_stuff][1].delete_at(1)
+puts my_office
+
+#All done!  Add cold beer to desk
+my_office[:desk] << "cold beer"
+puts my_office
