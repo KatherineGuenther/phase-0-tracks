@@ -20,27 +20,27 @@ def make_alias(name)
 	#Define variables vowels = "aeiou" and consonants = "bcdf..."
 	vowels = "aeiou"
 	consonants = "bcdfghjklmnpqrstvwxyz"
-	fake_name = ""
 
 	#Swap first and last names.  Convert string to array of words, then reverse and join.
-	names = name.split(" ")
-	names.reverse!
-	name = names.join(" ")
+	name_array = name.split(" ")
+	name_array.reverse!
+	name = name_array.join(" ")
 
 	#Change any vowel to the next vowel and any consonant to the next consonant. Leave spaces alone.
-	#Step through string using #each_char and test each letter for inclusion in vowels or consonants.
+	#Convert string to array of letters to allow use of #map.  Test each letter for inclusion in vowels or consonants.
 	#If vowel, change letter to next in vowels string. If consonant, change letter to next in consonant string.
-	name. each_char {|letter|
+	name_array = name.split("")
+	name_array.map! do |letter|
 		if vowels.include?(letter.downcase)
-			fake_name += next_in_string(letter, vowels)	
+			next_in_string(letter, vowels)	
 		elsif consonants.include?(letter.downcase)
-			fake_name += next_in_string(letter, consonants)
+			next_in_string(letter, consonants)
 		else
-			fake_name += letter
+			letter
 		end
-	}
-
-	fake_name
+	end
+	
+	name_array.join("")
 end
 
 p make_alias("Felicia Torres")
