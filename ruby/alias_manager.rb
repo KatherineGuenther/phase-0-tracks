@@ -43,5 +43,13 @@ def make_alias(name)
 	name_array.join("")
 end
 
-p make_alias("Felicia Torres")
-p make_alias("Zoro Smith")
+name = ""
+
+until name == "quit"
+	puts "What is your real name?"
+	name = gets.chomp
+	if name != "" && name != "quit"
+		fake_name = make_alias(name)
+		puts "Your alias is #{fake_name}."
+	end
+end
