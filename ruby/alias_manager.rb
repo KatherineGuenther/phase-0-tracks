@@ -44,12 +44,18 @@ def make_alias(name)
 end
 
 name = ""
+aliases = {}
 
 until name == "quit"
 	puts "What is your real name?"
 	name = gets.chomp
 	if name != "" && name != "quit"
 		fake_name = make_alias(name)
+		aliases[name] = fake_name
 		puts "Your alias is #{fake_name}."
 	end
+end
+
+aliases.each do |real_name, alias_name|
+	puts "#{alias_name} is actually #{real_name}."
 end
