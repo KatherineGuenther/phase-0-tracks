@@ -82,21 +82,33 @@ puts update_quantity(grocery_list, "pizza", 20)
 
 print_list(grocery_list)
 
+# REFLECT
+# What did you learn about pseudocode from working on this challenge?
+# It definitely paid off to spend the time doing a thorough job on
+# the pseudocoding.  By the time we got to the actual coding, the
+# methods practically wrote themselves.
 #
+# What are the tradeoffs of using arrays and hashes for this challenge?
+# We didn't even consider an array since we were storing a collection
+# of key/value pairs.  We could have made it work with an array or 
+# arrays, but it would have been clumsy!
 #
+# What does a method return?
+# A method returns the last expression evaluated.  This can be done
+# either implicitly or explicitly be use of the keyword return.
 #
+# What kind of things can you pass into methods as arguments?
+# Any primitive data types, data structures or even other methods.
 #
+# How can you pass information between methods?
+# On the input side, you can pass information between methods via arguments.
+# On the ooutput side, you can pass information by using the return value.
+# With classes, you can use an instance variable to share information between
+# instance methods.
 #
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
-
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+# I learned a few new tricks.  Probably the most interesting was the idea of using 
+# default arguments.  The most confusing part of a pairing session is still the
+# actual art of pairing.
 
 
