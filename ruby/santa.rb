@@ -24,6 +24,7 @@ class Santa
     puts "Reindeer ranking: #{@reindeer_ranking}"
     puts "Age: #{@age}"
   end
+ 
 
   # Getter Methods
   def age
