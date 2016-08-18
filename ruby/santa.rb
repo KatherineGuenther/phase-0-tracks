@@ -25,15 +25,16 @@ class Santa
     puts "Age: #{@age}"
   end
  
-
   # Getter Methods
-  def age
-    @age
-  end
+  #def age
+  #  @age
+  #end
+  attr_accessor :age
 
-  def ethnicity
-    @ethnicity
-  end
+  #def ethnicity
+  #  @ethnicity
+  #end
+  attr_reader :ethnicity
 
   # Setter Methods
   def celebrate_birthday
@@ -47,9 +48,10 @@ class Santa
     end
   end
 
-  def gender(new_gender)
-    @gender = new_gender
-  end
+  #def gender=(new_gender)
+  #  @gender = new_gender
+  #end
+  attr_accessor :gender
 
 end
 
@@ -65,7 +67,7 @@ bad_santa.celebrate_birthday
 puts "Bad santa is #{bad_santa.age} years old."
 
 bad_santa.get_mad_at("Vixen")
-bad_santa.gender("undecided")
+bad_santa.gender ="undecided"
 bad_santa.about
 
 
@@ -77,4 +79,12 @@ genders.length.times {|idx|santas << Santa.new(genders[idx], ethnicities[idx])}
 santas.each {|santa| santa.about}
 
 
-
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+1000.times do |santa|
+  gender = example_genders[rand(example_genders.length)]
+  ethnicity = example_ethnicities[rand(example_ethnicities.length)]
+  santa = Santa.new(gender, ethnicity)
+  santa.age = rand(141)
+  puts "Age: #{santa.age}, Ethnicity: #{santa.ethnicity}, Gender: #{santa.gender}"
+end
