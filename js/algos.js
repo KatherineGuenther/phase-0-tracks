@@ -8,7 +8,7 @@ function longestString(strings) {
 
   var longest = "";
 
-  for (idx = 0; idx < strings.length; idx++) {
+  for (var idx = 0; idx < strings.length; idx++) {
     if (strings[idx].length > longest.length) {
       longest = strings[idx];
     }
@@ -30,9 +30,38 @@ function keyValueMatch(object1, object2){
     }
   }
 
-  return false
+  return false;
 }
 
+
+// Build an array of a specified length
+function buildArray(length) {
+
+  var newArray = [];
+
+  for (var idx = 0; idx < length; idx++) {
+    newArray.push(randomWord());
+  }
+
+  return newArray;
+}
+
+
+// Generate a random word of random length
+function randomWord() {
+  var letters = "abcdefghijklmnopqrstuvwxyz";
+  var length = Math.floor((Math.random() * 10) + 1);
+  var word = "";
+
+  for (var idx = 0; idx < length; idx++) {
+    word += letters[Math.floor((Math.random() * 26))];
+  }
+
+  return word;
+}
+
+
+// DRIVER CODE
 console.log(longestString(["long phrase","longest phrase","longer phrase"]));
 console.log(longestString(["abcdef","abc","a"]));
 
@@ -43,3 +72,7 @@ var car = {make: "Toyota", model: "Prius", color: "black"};
 console.log(keyValueMatch(dog, cat));
 console.log(keyValueMatch(car, cat));
 console.log(keyValueMatch(dog, car));
+
+for (var idx = 0; idx < 10; idx++) {
+  console.log(buildArray(idx + 1));
+}
