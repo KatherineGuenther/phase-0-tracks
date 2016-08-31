@@ -45,3 +45,16 @@ sqlite> SELECT * FROM animals;
 5|Beagle|3|false|20150830|1
 6|Bengal tiger|1|true|20030717|3
 sqlite>
+
+
+
+sqlite> SELECT * from animals INNER JOIN species ON animals.species_id = species.id;
+1|Dachshund|2|false|19990405|1|1|Canis lupus
+2|Gray wolf|5|true|19990405|1|1|Canis lupus
+3|Siberian tiger|1|true|20001025|3|3|Panthera tigris
+5|Beagle|3|false|20150830|1|1|Canis lupus
+6|Bengal tiger|1|true|20030717|3|3|Panthera tigris
+sqlite> SELECT * FROM animals LEFT JOIN species ON animals.species_id = species.id;
+1|Dachshund|2|false|19990405|1|1|Canislupus                                    2|Graywolf|5|true|19990405|1|1|Canislupus                                      3|Siberian tiger|1|true|20001025|3|3|Panthera tigris
+5|Beagle|3|false|20150830|1|1|Canis lupus
+6|Bengal tiger|1|true|20030717|3|3|Panthera tigris
