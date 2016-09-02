@@ -1,6 +1,6 @@
 require "sqlite3"
-#require_relative "buyers.rb"
-#require_relative "sellers.rb"
+require_relative "table_utilities.rb"
+
 
 # Make a new database
 db = SQLite3::Database.new("relocation.db")
@@ -45,8 +45,7 @@ input = gets.chomp.downcase
 client_type = input == "b" ? "buyer": "seller"
 
 if client_type == "buyer"
-  puts "Buyer"
-  #client_id = get_client_info(db)
+  client_id = get_client_info(db)
   #display_matches(db, client_id)
 else
   until input == "done"
