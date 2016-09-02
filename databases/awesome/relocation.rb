@@ -53,7 +53,7 @@ else
     input = gets.chomp.downcase
 
     if input == "l"
-      #update_locations(db)
+      update_locations(db)
     elsif input == "h"
       #update_houses(db)
     end
