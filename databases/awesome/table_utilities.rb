@@ -25,4 +25,17 @@ def get_client_info(db)
   client[0][0]
 end
 
+# Prompt the user for a new location.  If not already in the table, add it.
+def update_locations(db)
+
+  puts "Please enter a new location:"
+  area = gets.chomp.upcase
+
+  if db.execute("SELECT * FROM locations WHERE area = '#{area}'").empty?
+    db.execute("INSERT INTO locations (area) VALUES (?)", [area])
+  else
+    puts "That location is already in the table."
+  end
+
+end
 
