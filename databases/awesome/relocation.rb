@@ -5,7 +5,7 @@ require_relative "table_utilities.rb"
 # Make a new database
 db = SQLite3::Database.new("relocation.db")
 
-# If one doesn't alreay exist, create a locations table with id and area
+# If one doesn't already exist, create a locations table with id and area
 create_locations_table = <<-SQL
   CREATE TABLE IF NOT EXISTS locations(
     id INTEGER PRIMARY KEY,
@@ -13,7 +13,7 @@ create_locations_table = <<-SQL
   )
 SQL
 
-# If one doesn't alreay exist, create a client table with id, name, area desired and max price
+# If one doesn't already exist, create a client table with id, name, area desired and max price
 create_clients_table = <<-SQL
   CREATE TABLE IF NOT EXISTS clients(
     id INTEGER PRIMARY KEY,
@@ -24,7 +24,7 @@ create_clients_table = <<-SQL
   )
 SQL
 
-# If one doesn't alreay exist, create a houses table with id, address, area and price
+# If one doesn't already exist, create a houses table with id, address, area and price
 create_houses_table = <<-SQL
   CREATE TABLE IF NOT EXISTS houses(
     id INTEGER PRIMARY KEY,
@@ -49,26 +49,23 @@ if client_type == "buyer"
   #display_matches(db, client_id)
 else
   until input == "done"
-    puts "Which table would you like to update (enter H for houses, L for locations or done to quit):"
+    puts "Which table would you like to update (enter H for houses, L for locations or 'quit' to quit):"
     input = gets.chomp.downcase
 
     if input == "l"
       update_locations(db)
     elsif input == "h"
-      #update_houses(db)
+      update_houses(db)
     end
-    puts input
   end
 end
 
 
 
 
-# Allow a client to populate client table with name, email, max price and desired area.
-# Display locations table, prompt for area input by key
 
-# Allow a seller to populate houses table with price, address, area
-# Display locations table, prompt for area input by key
+
+
 
 # Define match 
 
