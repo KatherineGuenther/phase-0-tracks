@@ -1,3 +1,17 @@
+def display_matches(db, client_id)
+
+  client = db.execute("SELECT * FROM clients WHERE id = #{client_id}")
+  matches = db.execute("SELECT * FROM houses WHERE price <= #{client[0][2]} AND area_id = #{client[0][3]}")
+  
+  if matches.empty?
+    puts "Sorry.  No listings match your search at this time."
+  else
+    matches.each {|match| puts "#{match[1]} is available for $#{match[2]}"}
+  end
+
+end
+
+
 # Display the locations table and get an area id key
 def get_area_id(db)
 
@@ -5,7 +19,7 @@ def get_area_id(db)
   puts "Here are the available areas:"
 
   locations = db.execute("SELECT * FROM locations")
-  locations.each {|row| puts "#{row[0]}" + ": " + "#{row[1]}"}
+  locations.each {|row| puts "#{row[0]}: #{row[1]}"}
 
   puts "Please select an area by number:"
   area_id = gets.chomp.to_i
@@ -49,6 +63,9 @@ def update_houses(db)
     price = gets.chomp.to_i
 
     area_id = get_area_id(db)
+
+    db.execute("INSERT INTO houses (address, price, area_id) VALUES (?, ?, ?)", [address, price, area_id])
+
   end 
 
 end

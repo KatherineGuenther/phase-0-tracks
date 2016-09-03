@@ -46,9 +46,9 @@ client_type = input == "b" ? "buyer": "seller"
 
 if client_type == "buyer"
   client_id = get_client_info(db)
-  #display_matches(db, client_id)
+  display_matches(db, client_id)
 else
-  until input == "done"
+  until input == "quit"
     puts "Which table would you like to update (enter H for houses, L for locations or 'quit' to quit):"
     input = gets.chomp.downcase
 
