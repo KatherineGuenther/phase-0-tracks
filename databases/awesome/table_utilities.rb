@@ -1,3 +1,4 @@
+# Display the matches for a given client id
 def display_matches(db, client_id)
 
   client = db.execute("SELECT * FROM clients WHERE id = #{client_id}")
@@ -15,7 +16,6 @@ end
 # Display the locations table and get an area id key
 def get_area_id(db)
 
-  # Show contents of the location table
   puts "Here are the available areas:"
 
   locations = db.execute("SELECT * FROM locations")
@@ -65,7 +65,6 @@ def update_houses(db)
     area_id = get_area_id(db)
 
     db.execute("INSERT INTO houses (address, price, area_id) VALUES (?, ?, ?)", [address, price, area_id])
-
   end 
 
 end
