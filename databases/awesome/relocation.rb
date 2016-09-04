@@ -40,6 +40,7 @@ db.execute(create_locations_table)
 db.execute(create_clients_table)
 db.execute(create_houses_table)
 
+# Add a user interface
 puts "Are you buying or selling today?  Please enter B or S:"
 input = gets.chomp.downcase
 client_type = input == "b" ? "buyer": "seller"
@@ -59,15 +60,3 @@ else
     end
   end
 end
-
-
-
-
-
-
-
-
-# Define match 
-
-# Display matching listings
-
