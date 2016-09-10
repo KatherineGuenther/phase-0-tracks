@@ -15,8 +15,8 @@ $(document).ready(function(){
     $(this).css("background", "pink");
   });
 
-  //
-  $("ul_block").click(function() {
-    $("li:first-child").css("background-color", "yellow");
+  //Turn first list item yellow on click
+  $("li:first-child").click(function() {
+    $(this).css("background-color", "yellow");
   });
 });
