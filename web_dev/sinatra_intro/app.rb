@@ -37,6 +37,13 @@ get '/students' do
   response
 end
 
+# Add contact route that displays an address
+get '/contact' do
+  "P.O. Box 91, Bug Tussle OK 74554"
+end
+
+
+
 # write a GET route that retrieves
 # a particular student
 
