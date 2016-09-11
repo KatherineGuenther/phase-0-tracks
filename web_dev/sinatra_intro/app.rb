@@ -5,11 +5,14 @@ require 'sqlite3'
 db = SQLite3::Database.new("students.db")
 db.results_as_hash = true
 
-# write a basic GET route
-# add a query parameter
-# GET /
+
+# Modify home page to take a query parameter to search student database
+# by id, name, campus, or age.
 get '/' do
-  "#{params[:name]} is #{params[:age]} years old."
+  if !(query = params.to_a).empty?
+    students = db.execute("SELECT * FROM students WHERE #{query[0][0]} = ?", [query[0][1]])
+    students.to_s
+  end
 end
 
 # write a GET route with
