@@ -42,7 +42,11 @@ get '/contact' do
   "P.O. Box 91, Bug Tussle OK 74554"
 end
 
-
+# Add great job route that takes a person's name as a query parameter
+get '/great_job' do
+  name = params[:name]
+  name ? "Good job, #{name}!" : "Good job!"
+end
 
 # write a GET route that retrieves
 # a particular student
